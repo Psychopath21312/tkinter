@@ -1,5 +1,4 @@
 from tkinter import *
-import random as rand
 
 class Main(Frame):
     def __init__(self,root):
