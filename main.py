@@ -6,7 +6,9 @@ class Main(Frame):
         self.init_main()
 
     def init_main(self):
-        self.check = Label(text='')
+        self.hand = ''
+
+        self.check = Label(text='', width=60, height='4', font=('Arial', 12, 'bold'), bg='#d7d7d7')
 
         self.btn_one = Button(text='1', command=self.click_one)
         self.btn_two = Button(text='2', command=self.click_two)
@@ -43,52 +45,109 @@ class Main(Frame):
         self.del_bt.pack()
 
     def click_one(self):
-        self.check['text'] += '1'
+        self.hand += '1'
+        one = self.hand
+        for i in range(len(one)+1, 1, -1):
+            if i % 3 == 0:
+                one = f'{one[:i]} {one[i:]}'
+        self.check['text'] = one
 
     def click_two(self):
-        self.check['text'] += '2'
+        self.hand += '2'
+        two = self.hand
+        for i in range(len(two)+1, 1, -1):
+            if i % 3 == 0:
+                two = f'{two[:i]} {two[i:]}'
+        self.check['text'] = two
 
     def click_three(self):
-        self.check['text'] += '3'
+        self.hand += '3'
+        three = self.hand
+        for i in range(len(three)+1, 1, -1):
+            if i % 3 == 0:
+                three = f'{three[:i]} {three[i:]}'
+        self.check['text'] = three
 
     def click_four(self):
-        self.check['text'] += '4'
+        self.hand += '4'
+        four = self.hand
+        for i in range(len(four)+1, 1, -1):
+            if i % 3 == 0:
+                four = f'{four[:i]} {four[i:]}'
+        self.check['text'] = four
 
     def click_five(self):
-        self.check['text'] += '5'
+        self.hand += '5'
+        five = self.hand
+        for i in range(len(five)+1, 1, -1):
+            if i % 3 == 0:
+                five = f'{five[:i]} {five[i:]}'
+        self.check['text'] = five
 
     def click_six(self):
-        self.check['text'] += '6'
+        self.hand += '6'
+        six = self.hand
+        for i in range(len(six)+1, 1, -1):
+            if i % 3 == 0:
+                six = f'{six[:i]} {six[i:]}'
+        self.check['text'] = six
 
     def click_seven(self):
-        self.check['text'] += '7'
+        self.hand += '7'
+        seven = self.hand
+        for i in range(len(seven)+1, 1, -1):
+            if i % 3 == 0:
+                seven = f'{seven[:i]} {seven[i:]}'
+        self.check['text'] = seven
 
     def click_eight(self):
-        self.check['text'] += '8'
+        self.hand += '8'
+        eight = self.hand
+        for i in range(len(eight)+1, 1, -1):
+            if i % 3 == 0:
+                eight = f'{eight[:i]} {eight[i:]}'
+        self.check['text'] = eight
 
     def click_nine(self):
-        self.check['text'] += '9'
+        self.hand += '9'
+        nine = self.hand
+        for i in range(len(nine)+1, 1, -1):
+            if i % 3 == 0:
+                nine = f'{nine[:i]} {nine[i:]}'
+        self.check['text'] = nine
 
     def click_nil(self):
-        self.check['text'] += '0'
+        self.hand += '0'
+        nil = self.hand
+        for i in range(len(nil)+1, 1, -1):
+            if i % 3 == 0:
+                nil = f'{nil[:i]} {nil[i:]}'
+        self.check['text'] = nil
 
     def click_sum(self):
-        if self.check['text'] != '':
+        if self.hand != '':
+            self.hand += ' + '
             self.check['text'] += ' + '
 
     def click_dif(self):
-        if self.check['text'] != '':
+        if self.hand != '':
+            self.hand += ' - '
             self.check['text'] += ' - '
 
     def result_bt(self):
-        self.check['text'] = str(eval(self.check['text']))
+        self.hand = str(eval(self.hand))
+        resul = self.hand
+        for i in range(len(resul)+1, 1, -1):
+            if i % 3 == 0:
+                resul = f'{resul[:i]} {resul[i:]}'
+                self.check['text'] = resul
 
     def del_check(self):
         self.check['text'] = ''
-        
+
 if __name__ == '__main__':
     root = Tk()
-    app = Main(root)
     root.title('Калькулятор')
     root.geometry('800x600')
+    app = Main(root)
     app.mainloop()
