@@ -46,6 +46,8 @@ class Main(Frame):
         self.del_bt.grid(column=2, row=6)
 
     def click_one(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '1'
         self.Dx += '1'
         display = self.Dx
@@ -54,6 +56,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_two(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '2'
         self.Dx += '2'
         display = self.Dx
@@ -62,6 +66,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_three(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '3'
         self.Dx += '3'
         display = self.Dx
@@ -70,6 +76,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_four(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '4'
         self.Dx += '4'
         display = self.Dx
@@ -78,6 +86,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_five(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '5'
         self.Dx += '5'
         display = self.Dx
@@ -86,6 +96,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_six(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '6'
         self.Dx += '6'
         display = self.Dx
@@ -94,6 +106,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_seven(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '7'
         self.Dx += '7'
         display = self.Dx
@@ -102,6 +116,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_eight(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '8'
         self.Dx += '8'
         display = self.Dx
@@ -110,6 +126,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_nine(self):
+        if self.math == '0':
+            self.Dx = ''; self.math = ''
         self.math += '9'
         self.Dx += '9'
         display = self.Dx
@@ -118,6 +136,8 @@ class Main(Frame):
         self.check['text'] = display
 
     def click_nil(self):
+        if self.math == '0':
+            self.Dx = ''
         self.math += '0'
         self.Dx += '0'
         display = self.Dx
@@ -149,9 +169,10 @@ class Main(Frame):
                 resul = f'{resul[:i+1]} {resul[i+1:]}'
         self.check['text'] = resul
         self.Dx = resul
+        
 
     def del_check(self):
-        self.Dx = ''
+        self.Dx, self.math = '', ''
         self.check['text'] = ''
 
 if __name__ == '__main__':
